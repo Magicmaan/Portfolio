@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../setup/styles.css">
+    <title>Page Title</title>
+    <style>
+        html, body {
+        height: 100%; /* Set the body and html elements to occupy full height */
+        }
+
+
+        .gallery1{
+            width: 100%;
+            display: flex;
+            overflow-x: scroll;
+        }
+        .gallery1 div{
+            width: 90%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-gap: 10px;
+            padding: 10px;
+            flex: none;
+        }
+        .gallery1 div img{
+            width: 90%;
+            border-radius: 20%;
+            background-color: var(--background-colour-accent);
+        }
+        .gallery1::-webkit-scrollbar{display:none;}
+        .gallery1 div img:hover{transform: scale(1.1);}
+        .gallery-wrap1{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10% auto;
+            height: 5%;
+        }
+
+
+
+        .gallery2{
+            width: 100%;
+            display: flex;
+            overflow-x: scroll;
+        }
+        .gallery2 div{
+            width: 90%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-gap: 10px;
+            padding: 10px;
+            flex: none;
+        }
+        .gallery2 div img{
+            width: 90%;
+            border-radius: 20%;
+            background-color: var(--background-colour-accent);
+        }
+        .gallery2::-webkit-scrollbar{display:none;}
+        .gallery2 div img:hover{transform: scale(1.1);}
+        .gallery-wrap2{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10% auto;
+            height: 40%;
+        }
+
+
+
+        body {
+            background-image: linear-gradient(var(--background-colour-topg),var(--background-colour-bottomg),var(--background-colour-topg));
+            background-size: cover;
+            margin: 0;
+        }
+
+    </style>
+</head>
+
+
+<body>
+    <header class="heading-toolbar">
+        <nav>
+            <ul>
+                <li><a class="header-link header-link1" href="../contact/contact.html">Contact</a></li>
+                <li><a class="header-link header-link2" href="../main-page/main HTML.html">Home</a></li>
+                <li><a class="header-link header-link3" href="../about/about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="gallery-wrap1">
+        <div class="gallery1">
+            <div>
+                <span><img src="images/wrap1/image1.png"></span>
+                <span><img src="images/wrap1/image2.png"></span>
+                <span><img src="images/wrap1/image3.png"></span>
+                <span><img src="images/wrap1/image4.png"></span>
+            </div>
+            <div>
+                <span><img src="images/wrap1/image5.png"></span>
+                <span><img src="images/wrap1/image6.png"></span>
+                <span><img src="images/wrap1/image7.png"></span>
+                <span><img src="images/wrap1/image8.png"></span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="gallery-wrap2">
+        <div class="gallery2">
+            <div>
+                <span><img src="images/wrap2/image1.png"></span>
+                <span><img src="images/wrap2/image2.png"></span>
+                <span><img src="images/wrap2/image3.png"></span>
+                <span><img src="images/wrap2/image4.png"></span>
+            </div>
+            <div>
+                <span><img src="images/wrap2/image5.png"></span>
+                <span><img src="images/wrap2/image6.png"></span>
+                <span><img src="images/wrap2/image7.png"></span>
+                <span><img src="images/wrap2/image8.png"></span>
+            </div>
+        </div>
+
+    </div>
+
+    
+
+
+
+
+
+    <script>
+        // JavaScript code to handle header clicks
+        window.addEventListener('DOMContentLoaded', function() {
+            var headers = document.querySelectorAll('.heading-toolbar a');
+            for (var i = 0; i < headers.length; i++) {
+                headers[i].addEventListener('click', handleHeaderClick);
+            }
+        });
+
+        function handleHeaderClick(event) {
+            event.preventDefault(); // Prevent default link behavior
+            var targetPage = event.target.getAttribute('href');
+            window.location.href = targetPage; // Redirect to the target page
+        }
+
+
+        let ScrollContainer1 = document.querySelector(".gallery1");
+        ScrollContainer1.addEventListener("wheel", (evt) => {
+            event.preventDefault()
+            ScrollContainer1.scrollLeft += evt.deltaY;
+        });
+
+        let ScrollContainer2 = document.querySelector(".gallery2");
+        ScrollContainer2.addEventListener("wheel", (evt) => {
+            event.preventDefault()
+            ScrollContainer2.scrollLeft += evt.deltaY;
+        });
+
+
+
+    </script>
+</body>
+
+</html>

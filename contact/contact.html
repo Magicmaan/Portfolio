@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../setup/styles.css">
+    <title>Page Title</title>
+    <style>
+        html, body {
+        height: 100%; /* Set the body and html elements to occupy full height */
+        }
+        
+        
+        .maintext{
+            display: flex;
+            flex-direction: column; /* Display the content in a vertical column */
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            position: absolute;
+            top: 200px;
+            left: 20%;
+            right: 20%;
+            bottom: 200px;
+
+            border-radius: 20px;
+            background-color: var(--background-colour-accent);
+            color: var(--textbox-colour);
+
+            font-family: 'CustomFont', monospace;
+            font-size: 24px;
+        }
+
+        .twitter, .discord{
+            text-decoration: none;
+        }
+        .discord img, .twitter img{
+            width: 10%;
+            height: auto;
+            border-radius: 50%;
+            background: #1f5fb3;
+            border: 5px solid white;
+        }
+        .maintext img:hover{
+            filter: brightness(150%);
+        }
+
+        #twitter-info, #discord-info{
+            font-size: 16px;
+            color: white;
+        }
+
+        body {
+            background-image: linear-gradient(var(--background-colour-topg),var(--background-colour-bottomg),var(--background-colour-topg));
+            background-size: cover;
+            margin: 0;
+        }
+
+
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <header class="heading-toolbar">
+        <nav>
+            <ul>
+                <li><a class="header-link header-link1" href="../main-page/main HTML.html">Home</a></li>
+                <li><a class="header-link header-link2" href="../portfolio/portfolio.html">Portfolio</a></li>
+                <li><a class="header-link header-link3" href="../about/about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="maintext">
+        <p>You can contact me below on the platforms Discord and Twitter</p>
+      
+        <a href="https://discordapp.com/users/Magic Man(?)#3006" class="discord">
+          <img src="../icons/discord.png" alt="Discord">
+        </a>
+        <p id="discord-info"> MagicMan#3006 </p>
+      
+        <a href="https://twitter.com/MagicMrmann" class="twitter">
+            <img src="../icons/twitter.png" alt="Twitter">
+        </a>
+        <p id="twitter-info"> @MagicMrmann</p>
+    </div>
+
+
+    <script>
+        // JavaScript code to handle header clicks
+        window.addEventListener('DOMContentLoaded', function() {
+            var headers = document.querySelectorAll('.heading-toolbar a');
+            for (var i = 0; i < headers.length; i++) {
+                headers[i].addEventListener('click', handleHeaderClick);
+            }
+        });
+
+        function handleHeaderClick(event) {
+            event.preventDefault(); // Prevent default link behavior
+            var targetPage = event.target.getAttribute('href');
+            window.location.href = targetPage; // Redirect to the target page
+        }
+
+
+    </script>
+</body>
+
+</html>

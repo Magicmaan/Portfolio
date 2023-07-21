@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Heading Toolbar</title>
+    <link rel="stylesheet" href="../setup/styles.css">
+    <style>
+
+        html, body {
+        height: 100%; /* Set the body and html elements to occupy full height */
+        }
+        body {
+            background-image: linear-gradient(var(--background-colour-topg),var(--background-colour-bottomg),var(--background-colour-topg));
+            background-size: cover;
+            margin: 0;
+        }
+
+        .icon-image{
+            text-align: center;
+            position: relative; 
+        }
+        
+        .icon-image img {
+            width: 30%; 
+            height: auto;
+            border-radius: 50%;
+            top: 90%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 100px;
+            box-shadow: 0px 0px 40px var(--image-outline);
+        }
+        
+
+        .twitter{
+            text-decoration: none;
+            position: relative;
+            left: 30%;
+        }
+        .discord{
+            text-decoration: none;
+            position: relative;
+            right: 30%;
+        }
+        .discord img, .twitter img{
+            width: 10%;
+            height: auto;
+            border-radius: 50%;
+            background: #1f5fb3;
+            border: 5px solid white;
+        }
+        .about{
+            display: none;
+            overflow: hidden;
+
+            position: absolute;
+            background-color: var(--background-colour-accent);
+            color: var(--textbox-colour);
+            text-align: center;
+            top: 300px;
+            left: 65%;
+            width: 32%;
+            padding: 10px;
+            margin: 20px;
+            border-radius: 20px;
+
+            font-family: 'CustomFont', monospace;
+            font-size: 20px;
+
+            transition: opacity 0.3s ease-in-out;
+        }
+        #expandedElement {
+        opacity: 1;
+        transition: opacity 1s; 
+        }
+        #expandedElement.fade {
+        opacity: 0;
+        }
+    
+        
+        .about-off{
+            position: absolute;
+            display:block;
+            text-align: center;
+            margin: 0;
+            left: 45%;
+            right: 45%;
+            top: 200px;
+            bottom: auto;
+        }
+        .about-off img{
+            width: 40%;
+            height: auto;
+            border-radius: 50%;
+            background-color: #141420;
+            background-blend-mode: multiply;
+        }
+        #button:hover{
+            filter: brightness(200%);
+        }
+
+    </style>
+  
+</head>
+
+
+<body>
+    <header class="heading-toolbar">
+        <nav>
+            <ul>
+                <li><a class="header-link header-link1" href="../Contact/contact.html">Contact</a></li>
+                <li><a class="header-link header-link2" href="../portfolio/portfolio.html">Portfolio</a></li>
+                <li><a class="header-link header-link3" href="../about/about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    
+    <div class="icon-image">
+        <img src="../icons/icon.png">
+    </div>
+
+
+    <div class="about-off" >
+        <img src="../icons/info.png" id="button" >
+    </div>
+
+    <div class="about" id="expandedElement">
+        <p> Welcome to my page, <br> 
+            My name is Theo (or MagicMan) and I make art.<br>
+            Above you can find more info on my work and contacts, the best place to reach me is on Twitter or discord.<br>
+            <br>
+            Currently my main project is a Minecraft mod called Tardis: Refined where I create assets alongside CommandrMoose.<br>
+            If you wish to for commissions, first check out a list of my previous work under portfolio, then feel free to send me a message!
+        </p>
+
+
+        <a href="https://twitter.com/MagicMrmann" class="twitter">
+            <img src="../icons/twitter.png" alt="Twitter">
+        </a>
+        <a href="https://discordapp.com/users/Magic Man(?)#3006" class="discord">
+            <img src="../icons/discord.png" alt="Discord">
+        </a>
+    </div>
+    
+    
+
+    <script>
+        // JavaScript code to handle header clicks
+        window.addEventListener('DOMContentLoaded', function() {
+            var headers = document.querySelectorAll('.heading-toolbar a');
+            for (var i = 0; i < headers.length; i++) {
+                headers[i].addEventListener('click', handleHeaderClick);
+            }
+        });
+
+        function handleHeaderClick(event) {
+            event.preventDefault(); // Prevent default link behavior
+            var targetPage = event.target.getAttribute('href');
+            window.location.href = targetPage; // Redirect to the target page
+        }
+
+
+
+        window.onload = function(){expandedElement.style.display = 'none';};
+
+        document.getElementById('button').addEventListener('click', function() {
+        var expandedElement = document.getElementById('expandedElement');
+
+
+        // Toggle the display of the expanded element
+        if (expandedElement.style.display === 'none') {
+            expandedElement.style.display = 'block';
+            element.style.opacity = 1;
+        } else {
+            expandedElement.style.display = 'none';
+            element.style.opacity = 0;
+        }
+        });
+
+
+    </script>
+</body>
+</html>
